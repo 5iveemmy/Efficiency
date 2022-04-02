@@ -1,8 +1,14 @@
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import SideBar from "./components/SideBar/SideBar";
+import GlobalStyle from "./globalStyles";
+
 function App() {
   return (
-    <div className="App">
-      <h1>Hello</h1>
-    </div>
+    <BrowserRouter>
+      <GlobalStyle />
+      <SideBar />
+    </BrowserRouter>
   );
 }
 
