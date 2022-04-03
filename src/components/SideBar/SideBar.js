@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Side = styled.div`
   height: 100%;
   width: 262px;
-  background-color: red;
+  /* background-color: red; */
 `;
 const SideWrap = styled.div``;
 
