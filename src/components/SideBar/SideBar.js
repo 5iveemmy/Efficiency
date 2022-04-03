@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { SideBarData } from "./SideBarData";
 
 const Side = styled.div`
   height: 100%;
@@ -31,6 +32,31 @@ const MetaSmall = styled.span`
   color: #696d8c;
 `;
 
+const Items = styled.div`
+  color: #696d8c;
+`;
+
+const ItemsWrap = styled.div``;
+
+const Item = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+`;
+
+const ItemLeft = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const ItemIcon = styled.img``;
+
+const ItemText = styled.p`
+  padding-left: 19px;
+`;
+
+const ItemArrow = styled.img``;
+
 const SideBar = () => {
   return (
     <Side>
@@ -41,6 +67,21 @@ const SideBar = () => {
             <MetaSmall>adeyinka@metacare.app</MetaSmall>
           </MetaWrap>
         </Meta>
+        <Items>
+          <ItemsWrap>
+            {SideBarData.map((val, key) => {
+              return (
+                <Item key={val}>
+                  <ItemLeft>
+                    <ItemIcon src={val.icon} alt=""></ItemIcon>
+                    <ItemText>{val.title}</ItemText>
+                  </ItemLeft>
+                  <ItemArrow src={val.arrowIcon} alt=""></ItemArrow>
+                </Item>
+              );
+            })}
+          </ItemsWrap>
+        </Items>
       </SideWrap>
     </Side>
   );
