@@ -19,6 +19,8 @@ const TopLeft = styled.div``;
 
 const Ask = styled.div`
   position: relative;
+  width: 441px;
+  height: 54px;
 `;
 
 const AskInput = styled.input`
@@ -26,8 +28,8 @@ const AskInput = styled.input`
   border-radius: 10px;
   border: none;
   outline: none;
-  width: 441px;
-  height: 54px;
+  width: 100%;
+  height: 100%;
   padding: 12px 16px;
 
   &::placeholder {
