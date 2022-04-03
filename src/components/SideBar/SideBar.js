@@ -42,6 +42,7 @@ const Item = styled.div`
   display: flex;
   justify-content: space-between;
   padding-top: 30px;
+  cursor: pointer;
 `;
 
 const ItemLeft = styled.div`
