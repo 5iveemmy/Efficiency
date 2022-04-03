@@ -4,17 +4,32 @@ import styled from "styled-components";
 const Side = styled.div`
   height: 100%;
   width: 262px;
-  /* background-color: red; */
+  border-right: 1px solid #ecebf5;
 `;
-const SideWrap = styled.div``;
+const SideWrap = styled.div`
+  padding: 22px;
+`;
 
-const Meta = styled.div``;
+const Meta = styled.div`
+  border: 1px solid #ecebf5;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0;
+`;
 
 const MetaWrap = styled.div``;
 
-const MetaHead = styled.h2``;
+const MetaHead = styled.h2`
+  font-size: 14px;
+`;
 
-const MetaSmall = styled.p``;
+const MetaSmall = styled.span`
+  font-size: 12px;
+  color: #696d8c;
+`;
 
 const SideBar = () => {
   return (
