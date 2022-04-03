@@ -72,7 +72,7 @@ const SideBar = () => {
           <ItemsWrap>
             {SideBarData.map((val, key) => {
               return (
-                <Item key={val}>
+                <Item key={key}>
                   <ItemLeft>
                     <ItemIcon src={val.icon} alt=""></ItemIcon>
                     <ItemText>{val.title}</ItemText>
