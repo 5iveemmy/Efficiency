@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
 import styled from "styled-components";
+import sched from "../assets/schedule.svg";
 
 const ForChart = styled.div`
   margin-top: 24px;
@@ -28,6 +29,11 @@ const TheTime = styled.div`
   padding: 24px;
 `;
 
+const TimeFlex = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 const ForTime = styled.div`
   background: #fafafa;
   border: 1px solid #ecebf5;
@@ -53,9 +59,18 @@ const Mins = styled.p`
   padding-top: 8px;
 `;
 
-const ChartTop = styled.div``;
+const ChartTop = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 24px;
+`;
 
-const ChartTopLeft = styled.div``;
+const ChartTopLeft = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 269px;
+  align-items: center;
+`;
 
 const Avrt = styled.p`
   font-size: 18px;
@@ -79,14 +94,80 @@ const GreenText = styled.span`
   font-weight: 600;
 `;
 
-const ChartTopRight = styled.div``;
+const ChartTopRight = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 272px;
+  align-items: center;
+`;
 
+const High = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const HighRed = styled.div`
+  width: 10px;
+  height: 10px;
+  background-color: #f05d23;
+  border-radius: 2px;
+`;
+
+const HighText = styled.p`
+  font-size: 14px;
+  padding-left: 8px;
+  font-weight: 500;
+`;
+
+const Month = styled.div`
+  border: 1px solid #e1e1eb;
+  box-sizing: border-box;
+  border-radius: 8px;
+  width: 148px;
+  height: 38px;
+`;
+
+const MonthWrap = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+`;
+
+const This = styled.p`
+  font-size: 14px;
+`;
+
+const Sched = styled.img``;
+
+const Time = ({ resp, time }) => {
+  return (
+    <TheTime>
+      <ForTime>
+        <ForTimeWrap>
+          <Resp>{resp}</Resp>
+          <Mins>{time}</Mins>
+        </ForTimeWrap>
+      </ForTime>
+    </TheTime>
+  );
+};
 class PlatChart extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
       options: {
+        chart: {
+          toolbar: {
+            show: false,
+          },
+        },
+        stroke: {
+          width: 5,
+          curve: "smooth",
+        },
         xaxis: {
           categories: ["jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
         },
@@ -114,25 +195,32 @@ class PlatChart extends Component {
                   </AvGreenWrap>
                 </AvGreen>
               </ChartTopLeft>
-              <ChartTopRight></ChartTopRight>
+              <ChartTopRight>
+                <High>
+                  <HighRed></HighRed>
+                  <HighText>High Priority</HighText>
+                </High>
+                <Month>
+                  <MonthWrap>
+                    <This>This Month</This>
+                    <Sched src={sched} alt="schedule" />
+                  </MonthWrap>
+                </Month>
+              </ChartTopRight>
             </ChartTop>
             <ChartWrap>
               <Chart
                 options={this.state.options}
                 series={this.state.series}
                 type="line"
-                width="500"
+                width="420"
               />
             </ChartWrap>
           </ChartArea>
-          <TheTime>
-            <ForTime>
-              <ForTimeWrap>
-                <Resp>Average Response Time</Resp>
-                <Mins>30 Mins</Mins>
-              </ForTimeWrap>
-            </ForTime>
-          </TheTime>
+          <TimeFlex>
+            <Time resp="Average Response Time" time="30 Mins" />
+            <Time resp="Response Time" time="1 Hour 30 Mins" />
+          </TimeFlex>
         </ForChartWrap>
       </ForChart>
     );
