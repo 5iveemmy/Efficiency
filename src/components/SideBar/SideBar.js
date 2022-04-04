@@ -13,7 +13,6 @@ const SideWrap = styled.div`
 
 const Meta = styled.div`
   border: 1px solid #ecebf5;
-  box-sizing: border-box;
   border-radius: 8px;
   display: flex;
   justify-content: center;

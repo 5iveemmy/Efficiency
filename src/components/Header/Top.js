@@ -47,7 +47,6 @@ const AskSearch = styled.img`
 
 const TopRight = styled.div`
   border: 1px solid #ecebf5;
-  box-sizing: border-box;
   border-radius: 8px;
   height: 54px;
   width: 175px;

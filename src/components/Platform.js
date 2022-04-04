@@ -63,7 +63,6 @@ const Search = styled.img`
 
 const Filt = styled.div`
   border: 1px solid #e1e1eb;
-  box-sizing: border-box;
   border-radius: 8px;
   width: 160px;
   height: 44px;

@@ -6,14 +6,11 @@ import sched from "../assets/schedule.svg";
 const ForChart = styled.div`
   margin-top: 24px;
   border: 1px solid #ecebf5;
-  box-sizing: border-box;
   border-radius: 10px;
   width: 1018px;
 `;
 
-const ChartWrap = styled.div`
-  /* width: 20px; */
-`;
+const ChartWrap = styled.div``;
 
 const ForChartWrap = styled.div`
   display: flex;
@@ -37,7 +34,6 @@ const TimeFlex = styled.div`
 const ForTime = styled.div`
   background: #fafafa;
   border: 1px solid #ecebf5;
-  box-sizing: border-box;
   border-radius: 10px;
   width: 187px;
   height: 116px;
@@ -122,7 +118,6 @@ const HighText = styled.p`
 
 const Month = styled.div`
   border: 1px solid #e1e1eb;
-  box-sizing: border-box;
   border-radius: 8px;
   width: 148px;
   height: 38px;
@@ -167,6 +162,9 @@ class PlatChart extends Component {
         stroke: {
           width: 5,
           curve: "smooth",
+        },
+        markers: {
+          size: 5,
         },
         xaxis: {
           categories: ["jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
@@ -213,7 +211,7 @@ class PlatChart extends Component {
                 options={this.state.options}
                 series={this.state.series}
                 type="line"
-                width="420"
+                width="100%"
               />
             </ChartWrap>
           </ChartArea>
