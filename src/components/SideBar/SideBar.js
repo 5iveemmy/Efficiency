@@ -42,6 +42,10 @@ const Item = styled.div`
   justify-content: space-between;
   padding-top: 30px;
   cursor: pointer;
+
+  &:hover {
+    color: #6837ef;
+  }
 `;
 
 const ItemLeft = styled.div`

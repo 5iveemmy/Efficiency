@@ -181,7 +181,7 @@ const Fcrr = () => {
               series={[
                 {
                   name: "series-1",
-                  data: [50, 40, 30, 20, 10],
+                  data: [12, 18, 48, 19, 41, 32],
                 },
               ]}
               options={{
@@ -191,8 +191,8 @@ const Fcrr = () => {
                   },
                 },
                 stroke: {
-                  width: 5,
-                  curve: "smooth",
+                  width: 2,
+                  curve: "straight",
                   colors: "#07C9E2",
                 },
                 markers: {
