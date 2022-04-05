@@ -129,6 +129,9 @@ const Platform = () => {
             </PlatTopWrap>
           </PlatTop>
           <PlatChart />
+          <PlatChart />
+          <PlatChart />
+          <PlatChart />
         </PlatWrap>
       </Plat>
     </>

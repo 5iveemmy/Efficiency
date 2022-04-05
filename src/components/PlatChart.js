@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import Chart from "react-apexcharts";
 import styled from "styled-components";
 import sched from "../assets/schedule.svg";
@@ -148,81 +148,82 @@ const Time = ({ resp, time }) => {
     </TheTime>
   );
 };
-class PlatChart extends Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      options: {
-        chart: {
-          toolbar: {
-            show: false,
-          },
-        },
-        stroke: {
-          width: 5,
-          curve: "smooth",
-        },
-        markers: {
-          size: 5,
-        },
-        xaxis: {
-          categories: ["jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"],
-        },
-      },
-      series: [
-        {
-          name: "series-1",
-          data: [50, 40, 30, 20, 10],
-        },
-      ],
-    };
-  }
-
-  render() {
-    return (
-      <ForChart>
-        <ForChartWrap>
-          <ChartArea>
-            <ChartTop>
-              <ChartTopLeft>
-                <Avrt>Average Response Time</Avrt>
-                <AvGreen>
-                  <AvGreenWrap>
-                    <GreenText>+4.14%</GreenText>
-                  </AvGreenWrap>
-                </AvGreen>
-              </ChartTopLeft>
-              <ChartTopRight>
-                <High>
-                  <HighRed></HighRed>
-                  <HighText>High Priority</HighText>
-                </High>
-                <Month>
-                  <MonthWrap>
-                    <This>This Month</This>
-                    <Sched src={sched} alt="schedule" />
-                  </MonthWrap>
-                </Month>
-              </ChartTopRight>
-            </ChartTop>
-            <ChartWrap>
-              <Chart
-                options={this.state.options}
-                series={this.state.series}
-                type="line"
-                width="100%"
-              />
-            </ChartWrap>
-          </ChartArea>
-          <TimeFlex>
-            <Time resp="Average Response Time" time="30 Mins" />
-            <Time resp="Response Time" time="1 Hour 30 Mins" />
-          </TimeFlex>
-        </ForChartWrap>
-      </ForChart>
-    );
-  }
-}
+const PlatChart = () => {
+  return (
+    <ForChart>
+      <ForChartWrap>
+        <ChartArea>
+          <ChartTop>
+            <ChartTopLeft>
+              <Avrt>Average Response Time</Avrt>
+              <AvGreen>
+                <AvGreenWrap>
+                  <GreenText>+4.14%</GreenText>
+                </AvGreenWrap>
+              </AvGreen>
+            </ChartTopLeft>
+            <ChartTopRight>
+              <High>
+                <HighRed></HighRed>
+                <HighText>High Priority</HighText>
+              </High>
+              <Month>
+                <MonthWrap>
+                  <This>This Month</This>
+                  <Sched src={sched} alt="schedule" />
+                </MonthWrap>
+              </Month>
+            </ChartTopRight>
+          </ChartTop>
+          <ChartWrap>
+            <Chart
+              series={[
+                {
+                  name: "series-1",
+                  data: [50, 40, 30, 20, 10],
+                },
+              ]}
+              options={{
+                chart: {
+                  toolbar: {
+                    show: false,
+                  },
+                },
+                stroke: {
+                  width: 5,
+                  curve: "smooth",
+                  colors: "#F05D23",
+                },
+                markers: {
+                  size: 5,
+                  colors: "#fff",
+                },
+                xaxis: {
+                  categories: [
+                    "jan",
+                    "Feb",
+                    "Mar",
+                    "Apr",
+                    "May",
+                    "Jun",
+                    "Jul",
+                    "Aug",
+                  ],
+                },
+              }}
+              type="line"
+              width="100%"
+            />
+          </ChartWrap>
+        </ChartArea>
+        <TimeFlex>
+          <Time resp="Average Response Time" time="30 Mins" />
+          <Time resp="Response Time" time="1 Hour 30 Mins" />
+        </TimeFlex>
+      </ForChartWrap>
+    </ForChart>
+  );
+};
 
 export default PlatChart;
