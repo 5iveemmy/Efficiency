@@ -19,6 +19,10 @@ const EffNavList = styled.ul`
 const EffList = styled.li`
   color: ${({ deep }) => (deep ? "#060213" : "#696D8C")};
   border-bottom: ${({ border }) => (border ? "1px solid #6837EF" : "none")};
+
+  &:hover {
+    border-bottom: 1px solid #6837ef;
+  }
 `;
 
 const Eff = () => {

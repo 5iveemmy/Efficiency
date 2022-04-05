@@ -82,6 +82,7 @@ const Circle = styled.div`
 
 const CircleArrow = styled.img`
   padding-left: 12px;
+  cursor: pointer;
 `;
 
 const Line = styled.hr`
@@ -92,6 +93,7 @@ const Line = styled.hr`
 const Bell = styled.img`
   width: 13.5px;
   height: 15.75px;
+  cursor: pointer;
 `;
 
 const BellNumDiv = styled.div`

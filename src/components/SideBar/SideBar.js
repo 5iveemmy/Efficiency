@@ -57,6 +57,16 @@ const ItemText = styled.p`
 
 const ItemArrow = styled.img``;
 
+const SubItemList = styled.ul`
+  list-style: none;
+`;
+
+const SubItem = styled.li`
+  padding: 10px 0;
+  margin-left: 2.2rem;
+  font-weight: ${({ heavy }) => (heavy ? "bold" : "normal")};
+`;
+
 const SideBar = () => {
   return (
     <Side>
@@ -80,6 +90,12 @@ const SideBar = () => {
                 </Item>
               );
             })}
+            <SubItemList>
+              <SubItem heavy>Teams</SubItem>
+              <SubItem>Knowledge Base</SubItem>
+              <SubItem>Training SAM</SubItem>
+              <SubItem>Help Center</SubItem>
+            </SubItemList>
           </ItemsWrap>
         </Items>
       </SideWrap>
