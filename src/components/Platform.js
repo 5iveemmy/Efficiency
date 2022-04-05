@@ -3,7 +3,10 @@ import styled from "styled-components";
 import Index from "./Header";
 import search from "../assets/search.svg";
 import arrowDown from "../assets/arrowDown.svg";
-import PlatChart from "./PlatChart";
+import AvRt from "./LineCharts/AvRt";
+import Art from "./LineCharts/Art";
+import Rpr from "./LineCharts/Rpr";
+import Fcrr from "./LineCharts/Fcrr";
 
 const Plat = styled.div`
   width: 1178px;
@@ -128,10 +131,10 @@ const Platform = () => {
               </EffRight>
             </PlatTopWrap>
           </PlatTop>
-          <PlatChart />
-          <PlatChart />
-          <PlatChart />
-          <PlatChart />
+          <AvRt />
+          <Rpr />
+          <Art />
+          <Fcrr />
         </PlatWrap>
       </Plat>
     </>

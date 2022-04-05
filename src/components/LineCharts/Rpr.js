@@ -1,7 +1,7 @@
 import React from "react";
 import Chart from "react-apexcharts";
 import styled from "styled-components";
-import sched from "../assets/schedule.svg";
+import sched from "../../assets/schedule.svg";
 
 const ForChart = styled.div`
   margin-top: 24px;
@@ -68,7 +68,7 @@ const ChartTopLeft = styled.div`
   align-items: center;
 `;
 
-const Avrt = styled.p`
+const ChartHead = styled.p`
   font-size: 18px;
   font-weight: 600;
 `;
@@ -103,10 +103,10 @@ const High = styled.div`
   align-items: center;
 `;
 
-const HighRed = styled.div`
+const HighColor = styled.div`
   width: 10px;
   height: 10px;
-  background-color: #f05d23;
+  background-color: #3e68ff;
   border-radius: 2px;
 `;
 
@@ -149,14 +149,14 @@ const Time = ({ resp, time }) => {
   );
 };
 
-const PlatChart = () => {
+const Rpr = () => {
   return (
     <ForChart>
       <ForChartWrap>
         <ChartArea>
           <ChartTop>
             <ChartTopLeft>
-              <Avrt>Average Response Time</Avrt>
+              <ChartHead>Replies per resolution</ChartHead>
               <AvGreen>
                 <AvGreenWrap>
                   <GreenText>+4.14%</GreenText>
@@ -165,7 +165,7 @@ const PlatChart = () => {
             </ChartTopLeft>
             <ChartTopRight>
               <High>
-                <HighRed></HighRed>
+                <HighColor></HighColor>
                 <HighText>High Priority</HighText>
               </High>
               <Month>
@@ -193,7 +193,7 @@ const PlatChart = () => {
                 stroke: {
                   width: 5,
                   curve: "smooth",
-                  colors: "#F05D23",
+                  colors: "#3E68FF",
                 },
                 markers: {
                   size: 5,
@@ -218,7 +218,7 @@ const PlatChart = () => {
           </ChartWrap>
         </ChartArea>
         <TimeFlex>
-          <Time resp="Average Response Time" time="30 Mins" />
+          <Time resp="Average Replies" time="30 Mins" />
           <Time resp="Response Time" time="1 Hour 30 Mins" />
         </TimeFlex>
       </ForChartWrap>
@@ -226,4 +226,4 @@ const PlatChart = () => {
   );
 };
 
-export default PlatChart;
+export default Rpr;
